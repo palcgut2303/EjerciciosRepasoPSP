@@ -51,6 +51,7 @@ class Productor implements Runnable {
         for (int i = 0; i < 5; i++) {
             try {
                 rc.put(i);
+                
                 System.out.println(i + "=>Productor : " + nombre + ", produce : " + i);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,6 +76,7 @@ class Consumidor implements Runnable {
         for (int i = 0; i < 5; i++) {
             try {
                 int valor = rc.get();
+                
                 System.out.println(i + "=>Consumidor: " + nombre + ", consume: " + valor);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
@@ -95,7 +97,7 @@ public class Main {
         Thread cons2 = new Thread(new Consumidor(2, rc));
         
         prod1.start();
-        Thread.sleep(500);
+        Thread.sleep(120);
         cons1.start();
         cons2.start();
     }
