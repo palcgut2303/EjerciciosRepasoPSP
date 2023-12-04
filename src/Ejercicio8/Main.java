@@ -51,7 +51,7 @@ class Productor implements Runnable {
             Productos nuevoProducto = new Productos();
             try {
                 rc.put(nuevoProducto);
-                Thread.sleep(1000);
+               // Thread.sleep(100);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -73,7 +73,7 @@ class Consumidor implements Runnable {
         while (true) {
             try {
                 rc.get();
-                Thread.sleep(1500);
+               // Thread.sleep(150);
 
             } catch (InterruptedException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
